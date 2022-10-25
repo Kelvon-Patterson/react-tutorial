@@ -30,13 +30,14 @@ function BookList() {
         title={firstBook.title}
         author={firstBook.author}
       >
+        {/*ChildProp>>>*/}
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
           aliquid aperiam cupiditate debitis distinctio, earum eligendi enim,
           illo inventore laborum magnam magni maxime nobis non quasi quia, saepe
           tempore velit!
         </p>
-        {/*Child Prop*/}
+        {/*<<<Child Prop*/}
       </Book>
 
       <Book
