@@ -12,9 +12,9 @@ import "./index.css";
  */
 const books = [
   {
-    img: "https://m.media-amazon.com/images/I/41KY-NORo9L._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
-    title: "48 Laws of Power",
-    author: "Robert Greene",
+    img: "https://m.media-amazon.com/images/I/51aibR+lteL.jpg",
+    title: "Dance of Kings and Thieves",
+    author: "LJ Andrews",
   },
 
   {
@@ -22,21 +22,30 @@ const books = [
     title: "Fairy Tale",
     author: "Stephen King",
   },
+  {
+    img: "https://m.media-amazon.com/images/I/511BYDDBFOL._SX329_BO1,204,203,200_.jpg",
+    title: "Verity",
+    author: "Colleen Hoover",
+  },
 ];
-const names = ["John", "Peter", "Susan"];
-const newNames = names.map((name) => {
-  return <h1>{name}</h1>;
-});
-console.log(newNames);
+
 function BookList() {
-  return <section className={"bookList"}>{newNames}</section>;
+  return (
+    <section className={"bookList"}>
+      {books.map((book) => {
+        const { img, title, author } = book;
+        return <Book book={book} />;
+      })}
+    </section>
+  );
 }
 
-const Book = ({ img, author, title }) => {
+const Book = (props) => {
   //  console.log(props);
-  // const { img, author, title } = props;
+  const { img, author, title } = props.book;
   return (
     <article className={"book"}>
+      <img src={img} alt="" />
       <h2>{title}</h2>
       <h4>{author}</h4>
     </article>
