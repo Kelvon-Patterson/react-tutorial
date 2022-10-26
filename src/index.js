@@ -12,17 +12,21 @@ import "./index.css";
  */
 const books = [
   {
+    id: 1,
     img: "https://m.media-amazon.com/images/I/51aibR+lteL.jpg",
     title: "Dance of Kings and Thieves",
     author: "LJ Andrews",
   },
 
   {
+    id: 2,
     img: "https://m.media-amazon.com/images/I/51mDSB+k7YL._SX327_BO1,204,203,200_.jpg",
     title: "Fairy Tale",
     author: "Stephen King",
   },
+
   {
+    id: 3,
     img: "https://m.media-amazon.com/images/I/511BYDDBFOL._SX329_BO1,204,203,200_.jpg",
     title: "Verity",
     author: "Colleen Hoover",
@@ -34,7 +38,7 @@ function BookList() {
     <section className={"bookList"}>
       {books.map((book) => {
         const { img, title, author } = book;
-        return <Book book={book} />;
+        return <Book key={book.id} {...book} />;
       })}
     </section>
   );
@@ -42,7 +46,7 @@ function BookList() {
 
 const Book = (props) => {
   //  console.log(props);
-  const { img, author, title } = props.book;
+  const { img, author, title } = props;
   return (
     <article className={"book"}>
       <img src={img} alt="" />
